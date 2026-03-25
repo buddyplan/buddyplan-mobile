@@ -2,6 +2,7 @@ import { getCurrentUser } from './auth'
 import { supabase } from './supabase'
 import { saveRegenRecord, loadRegenRecord } from './db'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { isPremiumActive } from './revenuecat'
 
 export type Tier = 'free' | 'registered' | 'premium'
 
@@ -17,10 +18,17 @@ export const TIER_FEATURES: Record<Tier, Record<string, boolean>> = {
   premium:    { regen: true, favorites: true,  swap: true,  history: true,  ai: true,  export: true  },
 }
 
+/**
+ * Determine the user's current tier.
+ * First checks RevenueCat entitlement (source of truth),
+ * falls back to the cached isPremium flag from the profile.
+ */
 export async function getUserTier(isPremium?: boolean): Promise<Tier> {
   const user = await getCurrentUser()
   if (!user) return 'free'
-  if (isPremium) return 'premium'
+  // Check live entitlement from RevenueCat
+  const rcPremium = await isPremiumActive().catch(() => false)
+  if (rcPremium || isPremium) return 'premium'
   return 'registered'
 }
 
@@ -48,17 +56,23 @@ export async function incrementRegenCount(): Promise<void> {
   }
 }
 
-// ─── Premium activation (mock — replace with RevenueCat/Stripe later) ─────────
+// ─── Premium activation ────────────────────────────────────────────────────────
+// Called after a successful RevenueCat purchase/restore to sync the premium
+// flag into the local profile cache and Supabase.
 
 export async function activatePremium(profileKey: string): Promise<void> {
   const raw = await AsyncStorage.getItem(profileKey)
   if (raw) {
-    const profile = JSON.parse(raw)
-    profile.isPremium = true
-    await AsyncStorage.setItem(profileKey, JSON.stringify(profile))
+    try {
+      const profile = JSON.parse(raw)
+      profile.isPremium = true
+      await AsyncStorage.setItem(profileKey, JSON.stringify(profile))
+    } catch {
+      // ignore parse errors on corrupt cache
+    }
   }
   const { data } = await supabase.auth.getUser()
   if (data.user?.id) {
-    await supabase.from('profiles').update({ is_premium: true }).eq('id', data.user.id)
+    await supabase.from('profiles').update({ is_premium: true }).eq('id', data.user.id).catch(() => null)
   }
 }

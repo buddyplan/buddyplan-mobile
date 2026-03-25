@@ -13,6 +13,8 @@ import { Ionicons } from '@expo/vector-icons'
 import * as SplashScreen from 'expo-splash-screen'
 import { ThemeProvider } from '../contexts/ThemeContext'
 import { useTheme } from '../contexts/ThemeContext'
+import { initRevenueCat } from '../lib/revenuecat'
+import { supabase } from '../lib/supabase'
 
 class ErrorBoundary extends React.Component<
   { children: React.ReactNode },
@@ -71,6 +73,10 @@ function RootLayoutInner() {
   useEffect(() => {
     if (fontsLoaded) {
       SplashScreen.hideAsync()
+      // Initialize RevenueCat with the current user ID (if logged in)
+      supabase.auth.getUser().then(({ data }) => {
+        initRevenueCat(data.user?.id).catch(() => null)
+      })
     }
   }, [fontsLoaded])
 
@@ -81,12 +87,16 @@ function RootLayoutInner() {
       <StatusBar style={isDark ? 'light' : 'dark'} />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
-        <Stack.Screen name="onboarding" />
-        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="(tabs)" options={{ gestureEnabled: false }} />
         <Stack.Screen name="auth" />
         <Stack.Screen
           name="day-detail"
           options={{ presentation: 'modal', headerShown: false }}
+        />
+        <Stack.Screen
+          name="upgrade"
+          options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }}
         />
       </Stack>
     </>

@@ -15,6 +15,7 @@ import { loadProfile, saveProfile, savePlan, clearAll, loadFavorites, saveFavori
 import { generateWeekPlan } from '../../lib/planner'
 import { fetchAndCacheThaiMeals } from '../../lib/mealdb'
 import { activatePremium, incrementRegenCount } from '../../lib/subscription'
+import { signOut } from '../../lib/auth'
 import { useSubscription } from '../../hooks/useSubscription'
 import UpgradeModal from '../../components/UpgradeModal'
 import NotificationSheet from '../../components/NotificationSheet'
@@ -160,6 +161,23 @@ export default function ProfileScreen() {
     Alert.alert('เริ่มใหม่ทั้งหมด', 'ข้อมูลทั้งหมดจะถูกลบ คุณแน่ใจไหม?', [
       { text: 'ยกเลิก', style: 'cancel' },
       { text: 'ลบทั้งหมด', style: 'destructive', onPress: async () => { await clearAll(); router.replace('/onboarding/splash') } },
+    ])
+  }
+
+  const handleLogout = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
+    Alert.alert('ออกจากระบบ', 'คุณต้องการออกจากระบบใช่ไหม?', [
+      { text: 'ยกเลิก', style: 'cancel' },
+      {
+        text: 'ออกจากระบบ',
+        style: 'destructive',
+        onPress: async () => {
+          await signOut().catch(() => null)
+          await clearAll()
+          router.dismissAll()
+          router.replace('/onboarding/splash')
+        },
+      },
     ])
   }
 
@@ -406,6 +424,10 @@ export default function ProfileScreen() {
 
         {/* Footer */}
         <View style={S.footer}>
+          <TouchableOpacity style={S.logoutBtn} onPress={handleLogout} activeOpacity={0.85}>
+            <Ionicons name="log-out-outline" size={18} color="#C0392B" />
+            <Text style={S.logoutBtnText}>ออกจากระบบ</Text>
+          </TouchableOpacity>
           <Text style={S.versionText}>VERSION 2.4.0 (BUILD 88)</Text>
           <TouchableOpacity onPress={handleReset} activeOpacity={0.8}>
             <Text style={S.resetText}>เริ่มใหม่ทั้งหมด</Text>
@@ -617,6 +639,12 @@ function makeStyles(C: Theme) {
 
     // Footer
     footer: { alignItems: 'center', gap: 10, paddingTop: 4 },
+    logoutBtn: {
+      flexDirection: 'row', alignItems: 'center', gap: 8,
+      paddingVertical: 12, paddingHorizontal: 28,
+      borderRadius: 9999, borderWidth: 1.5, borderColor: '#C0392B',
+    },
+    logoutBtnText: { fontFamily: 'PlusJakartaSans_600SemiBold', fontSize: 14, color: '#C0392B' },
     versionText: { fontFamily: 'PlusJakartaSans_400Regular', fontSize: 11, color: C.textMuted, letterSpacing: 1 },
     resetText: { fontFamily: 'PlusJakartaSans_600SemiBold', fontSize: 14, color: '#C8722A' },
     footerIcons: { flexDirection: 'row', gap: 16, marginTop: 4 },

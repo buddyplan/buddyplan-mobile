@@ -68,6 +68,7 @@ export default function UpgradeModal({ visible, reason, currentTier, onClose, on
   const handlePremium = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
     onClose()
+    router.push('/upgrade')
     onUpgradePremium?.()
   }
 
