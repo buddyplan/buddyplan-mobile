@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Platform } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import * as Haptics from 'expo-haptics'
 import { useThemeColors } from '../hooks/useThemeColors'
@@ -56,6 +56,10 @@ export default function MealCard({ meal, mealTypeLabel, mealType, isFavorite = f
       {/* Icon or image */}
       {meal.imageUrl ? (
         <Image source={{ uri: meal.imageUrl }} style={styles.mealImage} />
+      ) : meal.emoji ? (
+        <View style={[styles.iconCircle, { backgroundColor: iconBg }]}>
+          <Text style={styles.emoji}>{meal.emoji}</Text>
+        </View>
       ) : (
         <View style={[styles.iconCircle, { backgroundColor: iconBg }]}>
           <Ionicons name={iconName} size={30} color={accent} />
@@ -220,6 +224,10 @@ function makeStyles(C: Theme) {
     swapBtnText: {
       fontFamily: 'PlusJakartaSans_600SemiBold',
       fontSize: 12,
+    },
+    emoji: {
+      fontSize: 30,
+      fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
     },
   })
 }

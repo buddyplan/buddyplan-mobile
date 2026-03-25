@@ -173,7 +173,7 @@ export default function HomeScreen() {
 
         {/* Title with user name */}
         <Text style={styles.heading}>
-          {profile?.name ? `สวัสดี, ${profile.name}! 👋\nกินอะไรดีวันนี้?` : 'สวัสดี! วันนี้\nกินอะไรดี? 👋'}
+          {profile?.name ? `สวัสดี, ${profile.name}!\nกินอะไรดีวันนี้?` : 'สวัสดี! วันนี้\nกินอะไรดี?'}
         </Text>
 
         {/* Stats */}

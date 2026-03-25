@@ -1,10 +1,11 @@
 /**
- * db.ts — Supabase-backed storage
+ * db.ts — API Gateway-backed storage
  * Falls back to AsyncStorage when user is not authenticated (offline / onboarding)
  */
 import { supabase } from './supabase'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { UserProfile, WeekPlan } from '../types'
+import { profileApi } from './api-client'
 
 const PROFILE_KEY      = '@buddyplan_profile'
 const PLAN_KEY         = '@buddyplan_plan'
@@ -24,14 +25,12 @@ async function getUserId(): Promise<string | null> {
 // ─── Profile ──────────────────────────────────────────────────────────────────
 
 export async function saveProfile(profile: UserProfile): Promise<void> {
-  // Always save locally
   await AsyncStorage.setItem(PROFILE_KEY, JSON.stringify(profile))
 
   const userId = await getUserId()
   if (!userId) return
 
-  await supabase.from('profiles').upsert({
-    id: userId,
+  await profileApi.update(userId, {
     goal: profile.goal,
     budget_per_week: profile.budgetPerWeek,
     target_calories: profile.targetCalories,
@@ -39,20 +38,15 @@ export async function saveProfile(profile: UserProfile): Promise<void> {
     name: profile.name ?? null,
     created_at: profile.createdAt,
     is_premium: profile.isPremium ?? false,
-  })
+  }).catch(() => null)
 }
 
 export async function loadProfile(): Promise<UserProfile | null> {
   const userId = await getUserId()
 
   if (userId) {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', userId)
-      .single()
-
-    if (!error && data) {
+    try {
+      const data = await profileApi.get(userId) as any
       const profile: UserProfile = {
         goal: data.goal,
         budgetPerWeek: data.budget_per_week,
@@ -62,13 +56,13 @@ export async function loadProfile(): Promise<UserProfile | null> {
         createdAt: data.created_at,
         isPremium: data.is_premium ?? false,
       }
-      // Keep local copy in sync
       await AsyncStorage.setItem(PROFILE_KEY, JSON.stringify(profile))
       return profile
+    } catch {
+      // fallthrough to local
     }
   }
 
-  // Fallback: local storage
   const raw = await AsyncStorage.getItem(PROFILE_KEY)
   if (!raw) return null
   try {
@@ -86,29 +80,26 @@ export async function savePlan(plan: WeekPlan): Promise<void> {
   const userId = await getUserId()
   if (!userId) return
 
-  await supabase.from('week_plans').upsert({
-    user_id: userId,
-    plan_data: plan,
-    generated_at: plan.generatedAt,
-  })
+  // Save plan via profile-service (stored in user_preferences as latest_plan)
+  await profileApi.updatePreferences(userId, {
+    latest_plan: plan,
+    plan_generated_at: plan.generatedAt,
+  }).catch(() => null)
 }
 
 export async function loadPlan(): Promise<WeekPlan | null> {
   const userId = await getUserId()
 
   if (userId) {
-    const { data, error } = await supabase
-      .from('week_plans')
-      .select('plan_data')
-      .eq('user_id', userId)
-      .order('generated_at', { ascending: false })
-      .limit(1)
-      .single()
-
-    if (!error && data?.plan_data) {
-      const plan = data.plan_data as WeekPlan
-      await AsyncStorage.setItem(PLAN_KEY, JSON.stringify(plan))
-      return plan
+    try {
+      const prefs = await profileApi.getPreferences(userId) as any
+      if (prefs?.latest_plan) {
+        const plan = prefs.latest_plan as WeekPlan
+        await AsyncStorage.setItem(PLAN_KEY, JSON.stringify(plan))
+        return plan
+      }
+    } catch {
+      // fallthrough to local
     }
   }
 
@@ -129,25 +120,23 @@ export async function saveShoppingChecked(checked: Record<string, boolean>): Pro
   const userId = await getUserId()
   if (!userId) return
 
-  await supabase.from('shopping_checked').upsert({
-    user_id: userId,
-    checked_items: checked,
-    updated_at: new Date().toISOString(),
-  })
+  await profileApi.updatePreferences(userId, {
+    shopping_checked: checked,
+    shopping_updated_at: new Date().toISOString(),
+  }).catch(() => null)
 }
 
 export async function loadShoppingChecked(): Promise<Record<string, boolean>> {
   const userId = await getUserId()
 
   if (userId) {
-    const { data, error } = await supabase
-      .from('shopping_checked')
-      .select('checked_items')
-      .eq('user_id', userId)
-      .single()
-
-    if (!error && data?.checked_items) {
-      return data.checked_items as Record<string, boolean>
+    try {
+      const prefs = await profileApi.getPreferences(userId) as any
+      if (prefs?.shopping_checked) {
+        return prefs.shopping_checked as Record<string, boolean>
+      }
+    } catch {
+      // fallthrough to local
     }
   }
 
@@ -166,23 +155,21 @@ export async function loadShoppingChecked(): Promise<Record<string, boolean>> {
 async function upsertUserPref(fields: Record<string, unknown>): Promise<void> {
   const userId = await getUserId()
   if (!userId) return
-  await supabase.from('user_preferences').upsert({
-    user_id: userId,
+  await profileApi.updatePreferences(userId, {
     updated_at: new Date().toISOString(),
     ...fields,
-  })
+  }).catch(() => null)
 }
 
 async function loadUserPrefs(): Promise<Record<string, unknown> | null> {
   const userId = await getUserId()
   if (!userId) return null
-  const { data, error } = await supabase
-    .from('user_preferences')
-    .select('*')
-    .eq('user_id', userId)
-    .single()
-  if (error || !data) return null
-  return data as Record<string, unknown>
+  try {
+    const data = await profileApi.getPreferences(userId)
+    return data as Record<string, unknown>
+  } catch {
+    return null
+  }
 }
 
 // ─── Favorites ────────────────────────────────────────────────────────────────
@@ -266,15 +253,5 @@ export async function clearAll(): Promise<void> {
   await AsyncStorage.multiRemove([
     PROFILE_KEY, PLAN_KEY, SHOPPING_KEY, FAVORITES_KEY,
     THEME_KEY, NOTIF_KEY, REGEN_KEY,
-  ])
-
-  const userId = await getUserId()
-  if (!userId) return
-
-  await Promise.all([
-    supabase.from('profiles').delete().eq('id', userId),
-    supabase.from('week_plans').delete().eq('user_id', userId),
-    supabase.from('shopping_checked').delete().eq('user_id', userId),
-    supabase.from('user_preferences').delete().eq('user_id', userId),
   ])
 }

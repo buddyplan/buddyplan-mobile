@@ -8,6 +8,8 @@ import {
   Animated,
   Dimensions,
   ScrollView,
+  Image,
+  Platform,
 } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { Meal } from '../types'
@@ -73,9 +75,17 @@ export default function SwapMealSheet({
           ) : (
             alternatives.map((meal, i) => (
               <View key={meal.id} style={styles.altCard}>
-                <View style={[styles.altIcon, { backgroundColor: ICON_BGS[i % ICON_BGS.length] }]}>
-                  <Ionicons name="restaurant-outline" size={26} color={ICON_COLORS[i % ICON_COLORS.length]} />
-                </View>
+                {meal.imageUrl ? (
+                  <Image source={{ uri: meal.imageUrl }} style={styles.altImage} />
+                ) : meal.emoji ? (
+                  <View style={[styles.altIcon, { backgroundColor: ICON_BGS[i % ICON_BGS.length] }]}>
+                    <Text style={styles.altEmoji}>{meal.emoji}</Text>
+                  </View>
+                ) : (
+                  <View style={[styles.altIcon, { backgroundColor: ICON_BGS[i % ICON_BGS.length] }]}>
+                    <Ionicons name="restaurant-outline" size={26} color={ICON_COLORS[i % ICON_COLORS.length]} />
+                  </View>
+                )}
                 <View style={styles.altInfo}>
                   <Text style={styles.altName}>{meal.name}</Text>
                   <View style={styles.altMeta}>
@@ -176,6 +186,13 @@ function makeStyles(C: Theme) {
     altIcon: {
       width: 56, height: 56, borderRadius: 28,
       alignItems: 'center', justifyContent: 'center',
+    },
+    altImage: {
+      width: 56, height: 56, borderRadius: 14,
+    },
+    altEmoji: {
+      fontSize: 26,
+      fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
     },
     altInfo: { flex: 1, gap: 6 },
     altName: {

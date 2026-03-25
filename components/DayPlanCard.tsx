@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, Platform } from 'react-native'
 import * as Haptics from 'expo-haptics'
 import { Ionicons } from '@expo/vector-icons'
 import { useThemeColors } from '../hooks/useThemeColors'
@@ -25,6 +25,10 @@ function MealRow({ meal, typeLabel, time, iconName, iconColor, iconBg }: MealRow
     <View style={styles.mealRow}>
       {meal.imageUrl ? (
         <Image source={{ uri: meal.imageUrl }} style={styles.mealImage} />
+      ) : meal.emoji ? (
+        <View style={[styles.mealIcon, { backgroundColor: iconBg }]}>
+          <Text style={styles.mealEmoji}>{meal.emoji}</Text>
+        </View>
       ) : (
         <View style={[styles.mealIcon, { backgroundColor: iconBg }]}>
           <Ionicons name={iconName} size={20} color={iconColor} />
@@ -168,6 +172,10 @@ function makeStyles(C: Theme) {
       width: 44,
       height: 44,
       borderRadius: 12,
+    },
+    mealEmoji: {
+      fontSize: 22,
+      fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
     },
     mealInfo: {
       flex: 1,
