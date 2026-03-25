@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#644e36",
+              "on-tertiary": "#e9ffe5",
+              "secondary": "#725b42",
+              "surface-container-highest": "#e3e3dd",
+              "on-primary-fixed-variant": "#6e5334",
+              "surface": "#fbf9f5",
+              "on-secondary-fixed-variant": "#6e573f",
+              "error": "#a73b21",
+              "error-dim": "#791903",
+              "tertiary-fixed": "#dcfcd9",
+              "surface-dim": "#dadad4",
+              "primary-fixed-dim": "#eec8a2",
+              "on-tertiary-fixed-variant": "#516d52",
+              "tertiary-container": "#dcfcd9",
+              "tertiary": "#4a664b",
+              "surface-container-high": "#e9e8e3",
+              "tertiary-fixed-dim": "#ceeecc",
+              "inverse-on-surface": "#9e9d9a",
+              "inverse-primary": "#fdd6af",
+              "surface-tint": "#765a3b",
+              "on-background": "#31332f",
+              "primary-dim": "#694e30",
+              "on-surface-variant": "#5e605b",
+              "on-error-container": "#6e1400",
+              "secondary-dim": "#654f37",
+              "surface-container-low": "#f5f4ef",
+              "tertiary-dim": "#3e5a40",
+              "on-tertiary-container": "#476248",
+              "secondary-container": "#fdddbd",
+              "on-secondary": "#fff7f3",
+              "on-primary-container": "#64492c",
+              "surface-variant": "#e3e3dd",
+              "outline-variant": "#b2b2ad",
+              "on-error": "#fff7f6",
+              "inverse-surface": "#0e0e0d",
+              "secondary-fixed": "#fdddbd",
+              "on-primary": "#fff7f3",
+              "on-tertiary-fixed": "#355037",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#4f371b",
+              "primary-container": "#fdd6af",
+              "outline": "#7a7b76",
+              "surface-container": "#efeee9",
+              "primary": "#765a3b",
+              "on-surface": "#31332f",
+              "secondary-fixed-dim": "#efcfb0",
+              "background": "#fbf9f5",
+              "on-secondary-fixed": "#503b25",
+              "error-container": "#fd795a",
+              "primary-fixed": "#fdd6af",
+              "surface-bright": "#fbf9f5"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Bar (Shared Component Strategy) -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f5]/80 backdrop-blur-xl flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#765a3b]">restaurant_menu</span>
+<span class="font-plus-jakarta text-xl font-bold text-[#765a3b] tracking-tight">Artisanal Kitchen</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="Chef Profile Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbyhoM2xj-dYSvZ2Nzdknlf5qkWFpRCbuZ2SoEKG2PRFcyXW2GFmoe8zOlvwL7-kRdQadHBJYlrqBYcznYWUzd-fMOxdihoX7BsvvNK8iFH96lpdjjI_w43R3HxvI3upRrOuKUO1q0Jfts3t_BMVJwPzbOJaPgte3mIdmwqLq_dGV1nxR3lEIVEtxO-aFlExA6Nf9umTBXSXDTfxRts3IT7zjQK0TH4lvnkR3SPIxryZbPgpymKLYUmHbvxNiokjFWC1f72LgeVyU"/>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Header Section -->
+<header class="mb-8 flex justify-between items-end">
+<div>
+<span class="text-tertiary font-bold tracking-widest uppercase text-[11px] mb-2 block">BuddyPlan</span>
+<h1 class="text-on-background font-bold text-4xl tracking-tight">รายการซื้อ</h1>
+</div>
+<button class="bg-surface-container-low p-3 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</header>
+<!-- Peach Total Banner (High-end Editorial Style) -->
+<section class="bg-primary-container/60 rounded-xl p-8 mb-16 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">shopping_basket</span>
+</div>
+<div class="relative z-10">
+<p class="text-on-primary-container font-semibold uppercase tracking-widest text-xs mb-1">Estimated Total Cost</p>
+<h2 class="text-on-primary-container font-extrabold text-4xl">ประมาณการรวม ฿1,245</h2>
+<div class="mt-4 flex items-center gap-2">
+<span class="bg-tertiary-container text-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Under Budget</span>
+<span class="text-on-primary-container/60 text-xs">Based on weekly meal plan</span>
+</div>
+</div>
+</section>
+<!-- Shopping List Groups -->
+<div class="space-y-12">
+<!-- Category: Meat (Immutable Content: 'อกไก่') -->
+<section>
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="font-bold text-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">restaurant</span> เนื้อสัตว์
+                    </h3>
+<span class="text-xs text-on-surface-variant font-medium">2 Items</span>
+</div>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="bg-surface-container-low rounded-lg p-5 flex items-center justify-between group hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">nutrition</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">อกไก่</p>
+<p class="text-xs text-on-surface-variant">500 กรัม • โปรตีนสูง</p>
+</div>
+</div>
+<label class="relative flex items-center cursor-pointer">
+<input class="peer h-8 w-8 rounded-full border-2 border-outline-variant bg-transparent text-tertiary focus:ring-0 focus:ring-offset-0 transition-all checked:border-tertiary" type="checkbox"/>
+<span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 left-1 text-tertiary pointer-events-none">check</span>
+</label>
+</div>
+<!-- Item 2 (Checked State: Sage Green) -->
+<div class="bg-tertiary-container/30 rounded-lg p-5 flex items-center justify-between transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary/50">egg</span>
+</div>
+<div>
+<p class="font-bold text-tertiary line-through decoration-2">ไข่ไก่</p>
+<p class="text-xs text-tertiary/70">1 แพ็ค (10 ฟอง)</p>
+</div>
+</div>
+<label class="relative flex items-center cursor-pointer">
+<input checked="" class="peer h-8 w-8 rounded-full border-2 border-tertiary bg-tertiary-container text-tertiary focus:ring-0 focus:ring-offset-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute opacity-100 left-1 text-tertiary pointer-events-none">check</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Category: Veg (Immutable Content: 'บล็อกโคลี') -->
+<section>
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="font-bold text-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">eco</span> ผักและผลไม้
+                    </h3>
+<span class="text-xs text-on-surface-variant font-medium">3 Items</span>
+</div>
+<div class="space-y-4">
+<!-- Item 3 -->
+<div class="bg-surface-container-low rounded-lg p-5 flex items-center justify-between group hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">crop</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">บล็อกโคลี</p>
+<p class="text-xs text-on-surface-variant">2 หัว • สดใหม่</p>
+</div>
+</div>
+<label class="relative flex items-center cursor-pointer">
+<input class="peer h-8 w-8 rounded-full border-2 border-outline-variant bg-transparent text-tertiary focus:ring-0 focus:ring-offset-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 left-1 text-tertiary pointer-events-none">check</span>
+</label>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-low rounded-lg p-5 flex items-center justify-between group hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">garden_cart</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">แครอท</p>
+<p class="text-xs text-on-surface-variant">300 กรัม</p>
+</div>
+</div>
+<label class="relative flex items-center cursor-pointer">
+<input class="peer h-8 w-8 rounded-full border-2 border-outline-variant bg-transparent text-tertiary focus:ring-0 focus:ring-offset-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 left-1 text-tertiary pointer-events-none">check</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Signature Chef's Note Chip -->
+<div class="bg-tertiary-container/40 p-6 rounded-xl flex gap-4 items-start">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+<div>
+<p class="text-tertiary font-bold text-sm">Chef's Tip</p>
+<p class="text-on-tertiary-container text-sm leading-relaxed">บล็อกโคลีช่วงนี้กำลังสวย แนะนำให้ล้างด้วยน้ำเกลือก่อนปรุงเพื่อความสะอาดสูงสุดครับ!</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Shared Component Strategy) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-8 pt-4 bg-[#fbf9f5]/90 backdrop-blur-md rounded-t-[3rem] z-50 shadow-[0_-10px_40px_rgba(49,51,47,0.05)]">
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-4 py-2 hover:bg-[#e9e8e3] rounded-full transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">home_app_logo</span>
+<span class="font-plus-jakarta text-[11px] font-semibold tracking-wider uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#fdd6af] text-[#765a3b] rounded-full px-6 py-2 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_basket</span>
+<span class="font-plus-jakarta text-[11px] font-semibold tracking-wider uppercase mt-1">Shopping</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-4 py-2 hover:bg-[#e9e8e3] rounded-full transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-plus-jakarta text-[11px] font-semibold tracking-wider uppercase mt-1">Stores</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-4 py-2 hover:bg-[#e9e8e3] rounded-full transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-plus-jakarta text-[11px] font-semibold tracking-wider uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

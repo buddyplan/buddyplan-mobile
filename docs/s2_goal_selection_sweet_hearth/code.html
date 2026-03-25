@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BuddyPlan - Select Your Goal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#fdd6af",
+                        "primary": "#765a3b",
+                        "surface-container": "#efeee9",
+                        "outline": "#7a7b76",
+                        "background": "#fbf9f5",
+                        "secondary-fixed-dim": "#efcfb0",
+                        "on-surface": "#31332f",
+                        "surface-bright": "#fbf9f5",
+                        "error-container": "#fd795a",
+                        "primary-fixed": "#fdd6af",
+                        "on-secondary-fixed": "#503b25",
+                        "secondary-container": "#fdddbd",
+                        "on-primary-container": "#64492c",
+                        "surface-variant": "#e3e3dd",
+                        "outline-variant": "#b2b2ad",
+                        "on-error": "#fff7f6",
+                        "on-secondary": "#fff7f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#355037",
+                        "on-primary": "#fff7f3",
+                        "inverse-surface": "#0e0e0d",
+                        "secondary-fixed": "#fdddbd",
+                        "on-primary-fixed": "#4f371b",
+                        "on-tertiary-fixed-variant": "#516d52",
+                        "primary-fixed-dim": "#eec8a2",
+                        "surface-dim": "#dadad4",
+                        "inverse-primary": "#fdd6af",
+                        "surface-tint": "#765a3b",
+                        "on-background": "#31332f",
+                        "tertiary-fixed-dim": "#ceeecc",
+                        "inverse-on-surface": "#9e9d9a",
+                        "tertiary": "#4a664b",
+                        "surface-container-high": "#e9e8e3",
+                        "tertiary-container": "#dcfcd9",
+                        "secondary-dim": "#654f37",
+                        "on-error-container": "#6e1400",
+                        "on-surface-variant": "#5e605b",
+                        "primary-dim": "#694e30",
+                        "on-tertiary-container": "#476248",
+                        "tertiary-dim": "#3e5a40",
+                        "surface-container-low": "#f5f4ef",
+                        "on-tertiary": "#e9ffe5",
+                        "on-secondary-container": "#644e36",
+                        "surface-container-highest": "#e3e3dd",
+                        "secondary": "#725b42",
+                        "on-secondary-fixed-variant": "#6e573f",
+                        "surface": "#fbf9f5",
+                        "on-primary-fixed-variant": "#6e5334",
+                        "tertiary-fixed": "#dcfcd9",
+                        "error-dim": "#791903",
+                        "error": "#a73b21"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf9f5; /* Using design system background */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- Header / Top Navigation Shell suppressed per Task Focus Rule -->
+<header class="flex justify-between items-center w-full px-8 py-8">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+</div>
+<span class="text-xl font-bold text-primary tracking-tight">BuddyPlan</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="h-1.5 w-8 rounded-full bg-primary"></div>
+<div class="h-1.5 w-12 rounded-full bg-primary"></div>
+<div class="h-1.5 w-8 rounded-full bg-surface-container-high"></div>
+</div>
+</header>
+<main class="flex-grow flex flex-col px-8 max-w-2xl mx-auto w-full">
+<!-- Headline Section -->
+<div class="mt-12 mb-16">
+<h1 class="text-4xl md:text-5xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                What can <span class="text-primary">BuddyPlan</span> help you with?
+            </h1>
+<p class="mt-6 text-on-surface-variant text-lg leading-relaxed max-w-md">
+                We'll tailor your daily artisanal meal plans based on your primary goal.
+            </p>
+</div>
+<!-- Goal Selection Bento-ish Grid -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Goal Card: Lose Weight -->
+<button class="group relative flex items-center justify-between p-8 bg-surface-container-low rounded-xl transition-all duration-300 hover:bg-surface-container-high text-left border-4 border-transparent">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="skillet">skillet</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Lose Weight</h3>
+<p class="text-on-surface-variant font-medium mt-1">~1,850 kcal / day</p>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors">
+<!-- Checkmark hidden -->
+</div>
+</button>
+<!-- Goal Card: Maintain Weight (SELECTED STATE) -->
+<button class="group relative flex items-center justify-between p-8 bg-surface-container-lowest rounded-xl shadow-[0px_20px_40px_rgba(49,51,47,0.05)] text-left border-4 border-primary-container ring-1 ring-primary/10">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="balance">balance</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Maintain Weight</h3>
+<p class="text-primary font-semibold mt-1">~2,300 kcal / day</p>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-2xl" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<!-- Chef's Note Chip: Contextual UI -->
+<div class="absolute -top-4 right-8 px-4 py-1.5 bg-tertiary-container rounded-full flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-tertiary font-bold text-xs uppercase tracking-widest">Recommended</span>
+</div>
+</button>
+<!-- Goal Card: Gain Muscle -->
+<button class="group relative flex items-center justify-between p-8 bg-surface-container-low rounded-xl transition-all duration-300 hover:bg-surface-container-high text-left border-4 border-transparent">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="fitness_center">fitness_center</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Gain Muscle</h3>
+<p class="text-on-surface-variant font-medium mt-1">~2,850 kcal / day</p>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors">
+<!-- Checkmark hidden -->
+</div>
+</button>
+</div>
+<!-- Illustration / Decor -->
+<div class="mt-12 flex justify-center opacity-40">
+<div class="relative w-full max-w-xs h-32 bg-surface-container-low rounded-xl flex items-center justify-center overflow-hidden">
+<div class="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-container/30 rounded-full"></div>
+<div class="absolute -top-8 -right-8 w-32 h-32 bg-secondary-container/20 rounded-full rotate-45"></div>
+<span class="material-symbols-outlined text-primary/40 text-6xl" data-icon="restaurant">restaurant</span>
+</div>
+</div>
+</main>
+<!-- Footer Action -->
+<footer class="p-8 pb-12 max-w-2xl mx-auto w-full">
+<button class="w-full bg-gradient-to-br from-primary to-primary-dim text-on-primary py-6 rounded-full font-bold text-xl shadow-[0px_20px_40px_rgba(49,51,47,0.1)] active:scale-95 transition-transform flex items-center justify-center gap-3">
+            Next
+            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center mt-6 text-on-surface-variant text-sm font-medium">
+            Step 2 of 5: Personalized Nutrition
+        </p>
+</footer>
+<!-- Image for Context (Abstract Background Texture) -->
+<div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-container/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-tertiary-container/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4"></div>
+<img class="hidden" data-alt="Soft abstract watercolor texture resembling linen and ceramic surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9PIpyL8xr6wOJ67DnlNQ9hmOFnRSEFyx-sWaZlGXS8dZnUReDDs_hlMdwxt08dw48nlxmQtSQvUymY1YGPZfxBIvz2rrCj_CMskocF0lxjAho2zwSacAmBOmIsa3X90bBZHKBNL38FGzGbe665PEvGOIDlbx9M9f_kb8mzcyTcF1rK4cNVqmFkRvNxj9xQG_ZKzvmp6-9tG2-eU7HR71DyvVZO5YeiBYLB1oo6pyIl2oNnfLhFp_46jUOT6TQYnRCvnXWF0jbWwM"/>
+</div>
+</body></html>

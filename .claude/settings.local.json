@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-expo-app@latest . --template blank-typescript)",
+      "Bash(npx create-expo-app@latest nomi --template blank-typescript)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx expo:*)",
+      "Bash(npm view:*)",
+      "Bash(python3 -c \"import json,sys; v=json.load\\(sys.stdin\\); print\\([x for x in v if x.startswith\\(''''18.3''''\\)][-3:]\\)\")",
+      "Bash(./node_modules/.bin/tsc --noEmit)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(ls node_modules/.bin/ts*)",
+      "Bash(python3 -c \":*)",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/expo/package.json''\\).version\\)\")",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/react-native/package.json''\\).version\\)\")",
+      "Bash(node -e \"const p = require\\(''./node_modules/expo/package.json''\\); console.log\\(''peerDeps:'', JSON.stringify\\(p.peerDependencies\\)\\); console.log\\(''deps RN:'', p.dependencies && p.dependencies[''react-native'']\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(''''RN:'''', d.get\\(''''react-native''''\\)\\); print\\(''''screens:'''', d.get\\(''''react-native-screens''''\\)\\); print\\(''''safe-area:'''', d.get\\(''''react-native-safe-area-context''''\\)\\)\")",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/expo-router/package.json''\\).version\\)\")",
+      "Bash(node -e \"console.log\\(''RN:'', require\\(''./node_modules/react-native/package.json''\\).version\\)\")",
+      "Bash(echo \"ANDROID_HOME: $ANDROID_HOME\")",
+      "Bash(echo \"JAVA_HOME: $JAVA_HOME\")",
+      "Read(//Users/Taeng/Library/Android/sdk/platform-tools/**)",
+      "Read(//Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/**)",
+      "Read(//Applications/Android Studio.app/Contents/jdk/Contents/Home/bin/**)",
+      "Bash(xcrun simctl:*)",
+      "Bash(find /Users/Taeng/BuddyPlan/app /Users/Taeng/BuddyPlan/components /Users/Taeng/BuddyPlan/lib -name *.tsx -o -name *.ts)",
+      "Bash(node -e \"const h = require\\(''./node_modules/expo-haptics''\\); console.log\\(Object.keys\\(h\\)\\); console.log\\(h.ImpactFeedbackStyle\\)\")",
+      "Bash(python3 -c \"import json,sys; p=json.load\\(sys.stdin\\); print\\(''''main:'''', p.get\\(''''main''''\\)\\); print\\(''''browser:'''', p.get\\(''''browser''''\\)\\); print\\(''''exports:'''', list\\(p.get\\(''''exports'''', {}\\).keys\\(\\)\\)[:5]\\)\")"
+    ]
+  }
+}

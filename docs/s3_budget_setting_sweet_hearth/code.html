@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Budget Setting - Artisanal Kitchen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#fdd6af",
+              "primary": "#765a3b",
+              "surface-container": "#efeee9",
+              "outline": "#7a7b76",
+              "background": "#fbf9f5",
+              "secondary-fixed-dim": "#efcfb0",
+              "on-surface": "#31332f",
+              "surface-bright": "#fbf9f5",
+              "error-container": "#fd795a",
+              "primary-fixed": "#fdd6af",
+              "on-secondary-fixed": "#503b25",
+              "secondary-container": "#fdddbd",
+              "on-primary-container": "#64492c",
+              "surface-variant": "#e3e3dd",
+              "outline-variant": "#b2b2ad",
+              "on-error": "#fff7f3",
+              "on-secondary": "#fff7f3",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#355037",
+              "on-primary": "#fff7f3",
+              "inverse-surface": "#0e0e0d",
+              "secondary-fixed": "#fdddbd",
+              "on-primary-fixed": "#4f371b",
+              "on-tertiary-fixed-variant": "#516d52",
+              "primary-fixed-dim": "#eec8a2",
+              "surface-dim": "#dadad4",
+              "inverse-primary": "#fdd6af",
+              "surface-tint": "#765a3b",
+              "on-background": "#31332f",
+              "tertiary-fixed-dim": "#ceeecc",
+              "inverse-on-surface": "#9e9d9a",
+              "tertiary": "#4a664b",
+              "surface-container-high": "#e9e8e3",
+              "tertiary-container": "#dcfcd9",
+              "secondary-dim": "#654f37",
+              "on-error-container": "#6e1400",
+              "on-surface-variant": "#5e605b",
+              "primary-dim": "#694e30",
+              "on-tertiary-container": "#476248",
+              "tertiary-dim": "#3e5a40",
+              "surface-container-low": "#f5f4ef",
+              "on-tertiary": "#e9ffe5",
+              "on-secondary-container": "#644e36",
+              "surface-container-highest": "#e3e3dd",
+              "secondary": "#725b42",
+              "on-secondary-fixed-variant": "#6e573f",
+              "surface": "#fbf9f5",
+              "on-primary-fixed-variant": "#6e5334",
+              "tertiary-fixed": "#dcfcd9",
+              "error-dim": "#791903",
+              "error": "#a73b21"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fbf9f5; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Custom range slider styling */
+        input[type=range] {
+          -webkit-appearance: none;
+          width: 100%;
+          background: transparent;
+        }
+        input[type=range]:focus { outline: none; }
+        input[type=range]::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 12px;
+          cursor: pointer;
+          background: #efeee9;
+          border-radius: 9999px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+          height: 32px;
+          width: 32px;
+          border-radius: 9999px;
+          background: #fd795a; /* Peach tone from error-container */
+          cursor: pointer;
+          -webkit-appearance: none;
+          margin-top: -10px;
+          box-shadow: 0 4px 12px rgba(253, 121, 90, 0.3);
+        }
+        input[type=range]::-moz-range-track {
+          width: 100%;
+          height: 12px;
+          cursor: pointer;
+          background: #efeee9;
+          border-radius: 9999px;
+        }
+        input[type=range]::-moz-range-thumb {
+          height: 32px;
+          width: 32px;
+          border-radius: 9999px;
+          background: #fd795a;
+          cursor: pointer;
+          box-shadow: 0 4px 12px rgba(253, 121, 90, 0.3);
+          border: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary-container min-h-screen flex flex-col">
+<!-- Top AppBar (from JSON blueprint) -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-background dark:bg-stone-900 sticky top-0 z-40">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="Chef Profile Avatar" class="w-full h-full object-cover" data-alt="Professional chef portrait in minimalist white uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL5zF9sJx952L5WxXG3wKIE8bDxbD3_1POqm9iNSunAMHZQgI2UM9tPbCjUBIIbWKp6IZzAmsT6INY6_l7Lrjb0sSx3aNLFACCTLZMsC3pU25jiC_TiI-2PW0WnxgufDz0e37mC4OFJugMk67OTif3_2VxYFk8JiNVIQ9lNpQGhSRrkmpXV6IC9IONirokIHbubkIc9keYF2296s-1U4aFFahoDX0b5MdDElJcoHqgFHWS90yDSx2hCrdmzH0mRDQstSG56IYblxg"/>
+</div>
+<span class="font-plus-jakarta-sans text-xl font-bold text-primary dark:text-orange-200">Artisanal Kitchen</span>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col px-8 pt-12 pb-32 max-w-2xl mx-auto w-full">
+<!-- Header Section: Asymmetric Editorial Layout -->
+<div class="mb-16">
+<h1 class="text-[3.5rem] font-extrabold text-primary leading-tight tracking-tight mb-2">Weekly Budget?</h1>
+<div class="flex items-baseline gap-2">
+<span class="bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full text-[12px] font-bold uppercase tracking-wider">Chef's Choice</span>
+<p class="text-on-surface-variant text-lg">Set your ideal pantry limit</p>
+</div>
+</div>
+<!-- Budget Display: Central Focus Card -->
+<div class="bg-surface-container-lowest rounded-xl p-10 flex flex-col items-center justify-center text-center shadow-[0px_20px_40px_rgba(49,51,47,0.05)] border border-outline-variant/15 mb-12">
+<div class="text-[5rem] font-bold text-primary tracking-tighter mb-2">
+                ฿1,400
+            </div>
+<div class="flex items-center gap-2 px-6 py-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-primary text-sm">restaurant</span>
+<span class="text-on-surface-variant font-medium text-md uppercase tracking-wide">฿100 per meal</span>
+</div>
+</div>
+<!-- Interactive Slider Section -->
+<div class="space-y-8">
+<div class="flex justify-between items-end px-2">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Minimum</span>
+<span class="text-xl font-bold text-primary">฿500</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Premium</span>
+<span class="text-xl font-bold text-primary">฿5,000</span>
+</div>
+</div>
+<div class="px-2">
+<input class="cursor-pointer" max="5000" min="500" type="range" value="1400"/>
+</div>
+<div class="pt-8 grid grid-cols-2 gap-4">
+<button class="bg-surface-container-low text-primary font-bold py-5 rounded-full hover:opacity-80 transition-opacity active:scale-95 duration-150">
+                    Skip for now
+                </button>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary font-bold py-5 rounded-full shadow-lg shadow-primary/20 active:scale-95 duration-150">
+                    Confirm Budget
+                </button>
+</div>
+</div>
+<!-- Contextual Tip: Chef's Note Chip -->
+<div class="mt-16 bg-tertiary-container/40 p-6 rounded-lg flex gap-4 items-start border border-tertiary/10">
+<div class="bg-tertiary-container p-2 rounded-full text-tertiary">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div>
+<p class="text-tertiary font-bold text-sm uppercase tracking-wider mb-1">Chef's Note</p>
+<p class="text-on-tertiary-container text-md leading-relaxed">Most home cooks find ฿1,400 provides the perfect balance of organic staples and specialty ingredients.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (from JSON blueprint) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-3 bg-background/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-[0px_-10px_40px_rgba(49,51,47,0.05)] border-t border-outline-variant/15 rounded-t-[3rem]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-stone-400 px-5 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-plus-jakarta-sans text-[11px] font-medium tracking-wide uppercase">Home</span>
+</a>
+<!-- Shopping (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-orange-900/40 text-primary dark:text-orange-100 rounded-full px-5 py-2 active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shopping_basket</span>
+<span class="font-plus-jakarta-sans text-[11px] font-medium tracking-wide uppercase">Shopping</span>
+</a>
+<!-- Stores -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-stone-400 px-5 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">storefront</span>
+<span class="font-plus-jakarta-sans text-[11px] font-medium tracking-wide uppercase">Stores</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-stone-400 px-5 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-plus-jakarta-sans text-[11px] font-medium tracking-wide uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile - Artisanal Kitchen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#fdd6af",
+              "primary": "#765a3b",
+              "surface-container": "#efeee9",
+              "outline": "#7a7b76",
+              "background": "#fbf9f5",
+              "secondary-fixed-dim": "#efcfb0",
+              "on-surface": "#31332f",
+              "surface-bright": "#fbf9f5",
+              "error-container": "#fd795a",
+              "primary-fixed": "#fdd6af",
+              "on-secondary-fixed": "#503b25",
+              "secondary-container": "#fdddbd",
+              "on-primary-container": "#64492c",
+              "surface-variant": "#e3e3dd",
+              "outline-variant": "#b2b2ad",
+              "on-error": "#fff7f6",
+              "on-secondary": "#fff7f3",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#355037",
+              "on-primary": "#fff7f3",
+              "inverse-surface": "#0e0e0d",
+              "secondary-fixed": "#fdddbd",
+              "on-primary-fixed": "#4f371b",
+              "on-tertiary-fixed-variant": "#516d52",
+              "primary-fixed-dim": "#eec8a2",
+              "surface-dim": "#dadad4",
+              "inverse-primary": "#fdd6af",
+              "surface-tint": "#765a3b",
+              "on-background": "#31332f",
+              "tertiary-fixed-dim": "#ceeecc",
+              "inverse-on-surface": "#9e9d9a",
+              "tertiary": "#4a664b",
+              "surface-container-high": "#e9e8e3",
+              "tertiary-container": "#dcfcd9",
+              "secondary-dim": "#654f37",
+              "on-error-container": "#6e1400",
+              "on-surface-variant": "#5e605b",
+              "primary-dim": "#694e30",
+              "on-tertiary-container": "#476248",
+              "tertiary-dim": "#3e5a40",
+              "surface-container-low": "#f5f4ef",
+              "on-tertiary": "#e9ffe5",
+              "on-secondary-container": "#644e36",
+              "surface-container-highest": "#e3e3dd",
+              "secondary": "#725b42",
+              "on-secondary-fixed-variant": "#6e573f",
+              "surface": "#fbf9f5",
+              "on-primary-fixed-variant": "#6e5334",
+              "tertiary-fixed": "#dcfcd9",
+              "error-dim": "#791903",
+              "error": "#a73b21"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#fbf9f5] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Chef Profile Avatar" class="w-full h-full object-cover" data-alt="Professional chef smiling wearing white coat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYvfqr6hdZq2cndrkbNtFyGc4pTd1Xh68XV1CHFj97C0o9fr8L1J8i4MvFAE19yGzvlVQiGj507xTbmUY0m_THVNClhHZLy8X1LSWisB6LpcUmbraadR1Mi50aYketJiqiPDkhf0EJyqxsM6k-UrqR7bBQax9Myx0ECEQKeQokyGLZSbTimN3DvKmyFAvf_K6HmpbXN2nt4XE2JgL64kFzZyHclgWRKf5UjMi26oLn0hlKS4dCbwRLcl50w3EtJiC8AkfU4Uj62SI"/>
+</div>
+<span class="font-plus-jakarta-sans text-headline-md tracking-tight text-[#765a3b] font-bold">Artisanal Kitchen</span>
+</div>
+<button class="text-[#765a3b] hover:bg-[#f5f4ef] transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-8 max-w-2xl mx-auto space-y-16">
+<!-- Hero Section -->
+<section class="flex flex-col items-start gap-2">
+<span class="font-label text-label-md tracking-[0.05em] text-on-surface-variant uppercase">Welcome Back</span>
+<h1 class="font-headline text-5xl font-extrabold text-primary tracking-tight">Hello, Friend!</h1>
+</section>
+<!-- Bento Grid Settings -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Goal Setting -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col justify-between min-h-[180px] hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="track_changes">track_changes</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Goal</h3>
+<p class="font-body text-on-surface-variant mt-1">Weight Maintenance</p>
+</div>
+</div>
+<!-- Budget Setting -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col justify-between min-h-[180px] hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="payments">payments</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Budget</h3>
+<p class="font-body text-on-surface-variant mt-1">$120 / week</p>
+</div>
+</div>
+<!-- Restrictions Setting (Wide) -->
+<div class="md:col-span-2 bg-surface-container-low rounded-xl p-8 flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-6">
+<div class="bg-tertiary-container w-14 h-14 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="no_food">no_food</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Restrictions</h3>
+<p class="font-body text-on-surface-variant mt-1">Dairy-free, No Shellfish</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="tune">tune</span>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="space-y-8">
+<button class="w-full bg-gradient-to-br from-primary to-primary-dim text-on-primary py-6 rounded-full font-headline text-xl font-bold shadow-[0px_20px_40px_rgba(118,90,59,0.15)] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                Create New Plan
+            </button>
+<!-- Chef's Note (Signature Component) -->
+<div class="bg-tertiary-container rounded-lg p-6 flex gap-4 items-start">
+<span class="material-symbols-outlined text-tertiary" data-icon="lightbulb">lightbulb</span>
+<div class="space-y-1">
+<span class="font-headline text-on-tertiary-container font-bold text-sm uppercase tracking-wider">Chef's Suggestion</span>
+<p class="font-body text-on-tertiary-container text-sm leading-relaxed">Try adjusting your budget for seasonal ingredients this month to get the freshest produce!</p>
+</div>
+</div>
+</section>
+<!-- Version Info -->
+<footer class="text-center pt-8 border-t border-outline-variant/15">
+<p class="font-label text-label-md text-outline-variant tracking-widest uppercase">Version 2.4.0 (Gold)</p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#fbf9f5]/80 backdrop-blur-xl shadow-[0px_-10px_40px_rgba(49,51,47,0.05)] rounded-t-[3rem] border-t border-[#b2b2ad]/15">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-5 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-plus-jakarta-sans text-[11px] font-medium tracking-wide uppercase mt-1">Home</span>
+</a>
+<!-- Shopping -->
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-5 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-plus-jakarta-sans text-[11px] font-medium tracking-wide uppercase mt-1">Shopping</span>
+</a>
+<!-- Stores -->
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-5 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="storefront">storefront</span>
+<span class="font-plus-jakarta-sans text-[11px] font-medium tracking-wide uppercase mt-1">Stores</span>
+</a>
+<!-- Profile (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-[#fdd6af] text-[#765a3b] rounded-full px-5 py-2 active:scale-90 duration-150 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-plus-jakarta-sans text-[11px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Store Locator - Artisanal Kitchen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#644e36",
+              "on-tertiary": "#e9ffe5",
+              "secondary": "#725b42",
+              "surface-container-highest": "#e3e3dd",
+              "on-primary-fixed-variant": "#6e5334",
+              "surface": "#fbf9f5",
+              "on-secondary-fixed-variant": "#6e573f",
+              "error": "#a73b21",
+              "error-dim": "#791903",
+              "tertiary-fixed": "#dcfcd9",
+              "surface-dim": "#dadad4",
+              "primary-fixed-dim": "#eec8a2",
+              "on-tertiary-fixed-variant": "#516d52",
+              "tertiary-container": "#dcfcd9",
+              "tertiary": "#4a664b",
+              "surface-container-high": "#e9e8e3",
+              "tertiary-fixed-dim": "#ceeecc",
+              "inverse-on-surface": "#9e9d9a",
+              "inverse-primary": "#fdd6af",
+              "surface-tint": "#765a3b",
+              "on-background": "#31332f",
+              "primary-dim": "#694e30",
+              "on-surface-variant": "#5e605b",
+              "on-error-container": "#6e1400",
+              "secondary-dim": "#654f37",
+              "surface-container-low": "#f5f4ef",
+              "tertiary-dim": "#3e5a40",
+              "on-tertiary-container": "#476248",
+              "secondary-container": "#fdddbd",
+              "on-secondary": "#fff7f3",
+              "on-primary-container": "#64492c",
+              "surface-variant": "#e3e3dd",
+              "outline-variant": "#b2b2ad",
+              "on-error": "#fff7f6",
+              "inverse-surface": "#0e0e0d",
+              "secondary-fixed": "#fdddbd",
+              "on-primary": "#fff7f3",
+              "on-tertiary-fixed": "#355037",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#4f371b",
+              "primary-container": "#fdd6af",
+              "outline": "#7a7b76",
+              "surface-container": "#efeee9",
+              "primary": "#765a3b",
+              "on-surface": "#31332f",
+              "secondary-fixed-dim": "#efcfb0",
+              "background": "#fbf9f5",
+              "on-secondary-fixed": "#503b25",
+              "error-container": "#fd795a",
+              "primary-fixed": "#fdd6af",
+              "surface-bright": "#fbf9f5"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f5]/80 backdrop-blur-xl">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#765a3b]" data-icon="restaurant_menu">restaurant_menu</span>
+<h1 class="font-headline text-headline-md tracking-tight font-bold text-[#765a3b]">Artisanal Kitchen</h1>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Chef Profile" class="w-full h-full object-cover" data-alt="Close up of a professional chef smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx7N2JxK5c1yQ5pdU_O12A_jbuSGLMCmBoQbiXCECbctfeLNIJ_BUkZlP99ygoGxtRXauLfk60sPumZI-qkAsV4dxnGvz2DEnZj_HlVYvptT-2AcYDP1v61UNKNy6q-OKPIMZGxumTaMdoZ3yfGtXtVukba6UknJsILl0dRjAl2P4PzMVZ6mJHWbgATpxW0MGCk1EdL1uZCV4YbzJAhx4_WdKVYLP1HkQ3zopo7BaxhvPYGSIvIIowmXvofPWc96eR6MfqsrXkLH4"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto space-y-12">
+<!-- Search & Header Section -->
+<section class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<p class="text-tertiary font-label text-[11px] uppercase tracking-wider font-semibold">Store Locator</p>
+<h2 class="text-display-lg font-headline font-extrabold text-on-background -tracking-[0.02em]">Find Ingredients</h2>
+</div>
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-4 pl-12 pr-6 focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Search by area or postal code..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Interactive Map Mockup -->
+<section class="relative w-full aspect-[4/3] md:aspect-[21/9] rounded-xl overflow-hidden bg-surface-container-low group">
+<img class="w-full h-full object-cover opacity-60 mix-blend-multiply grayscale-[20%]" data-alt="Minimalist stylized map of city streets with warm tones" data-location="Bangkok" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd0k3zeUBcqjmZpS_XO8FtVwFWqYBEvA8A87SkQ9RPuit-vhpsksgxSgKf9Y9xL5PciS2ncQth5YqczB4yyh5CRzVXkk1qTgIYWys-o0gYEbwY6VvaiKWO5jhwv32x2BqyMYMFLdnkASpNy7DQv6fnydzStUi36ITEc0P2yJAWitWf3RrGOWBDde9pzSkZqewktmOX9tmk1dX2Kbh754D581JXwnXbOUO2gMPTqXunrO2qbQ2bIdnkVr3uuyitpKqYmyv7cN0m6MA"/>
+<!-- Map Overlay UI -->
+<div class="absolute inset-0 pointer-events-none">
+<!-- Pins -->
+<div class="absolute top-1/4 left-1/3 flex flex-col items-center group/pin pointer-events-auto cursor-pointer">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-full shadow-lg transform transition-transform group-hover/pin:scale-110">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<div class="mt-2 bg-surface-container-lowest px-3 py-1 rounded-full text-xs font-bold shadow-sm border border-outline-variant/10">Lotus's Rama 9</div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 flex flex-col items-center group/pin pointer-events-auto cursor-pointer">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-full shadow-lg transform transition-transform group-hover/pin:scale-110">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<div class="mt-2 bg-surface-container-lowest px-3 py-1 rounded-full text-xs font-bold shadow-sm border border-outline-variant/10">Big C Extra</div>
+</div>
+<div class="absolute top-1/2 right-1/2 flex flex-col items-center group/pin pointer-events-auto cursor-pointer">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-full shadow-lg transform transition-transform group-hover/pin:scale-110">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<div class="mt-2 bg-surface-container-lowest px-3 py-1 rounded-full text-xs font-bold shadow-sm border border-outline-variant/10">Gourmet Market</div>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute right-6 bottom-6 flex flex-col gap-2">
+<button class="w-12 h-12 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface" data-icon="add">add</span>
+</button>
+<button class="w-12 h-12 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface" data-icon="remove">remove</span>
+</button>
+<button class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform mt-2">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+</section>
+<!-- Store Cards List (Asymmetric/Bento Pattern) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Main Highlight -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center border border-outline-variant/10">
+<div class="w-full md:w-1/3 aspect-square rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Fresh vegetables in a modern supermarket aisle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD47KXMK8GQBVOGh5HnjOCuukBE2j6Yp2ZumDGCllwbjBiZ9MLhXlu36E6sGsFT_0nTRygpZ2E629mSXpI_fXQ9g7rMzjhdzxqgh9wZXIRz-fX-pmHz8ZG41nxeasT-Sp_10Qn067tUA8iTyb6a5pNxjYMoWb14B5uEs4flQhygPaQAex3XzC9NiT93bYHfbHyhoB36OX3dH1ovc4-X2xAmSoEv31DlqNRNaorVhd48OMF2fJdeyEmgocxGwbSu1_2HgkyiOtA34pQ"/>
+</div>
+<div class="flex-grow space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-xs font-bold uppercase tracking-widest mb-2">Nearest to you</span>
+<h3 class="text-headline-md font-bold text-on-surface">Lotus's Rama 9</h3>
+<p class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="near_me">near_me</span> 1.2 km away
+                            </p>
+</div>
+<div class="text-right">
+<span class="text-tertiary font-bold block">Open</span>
+<span class="text-xs text-on-surface-variant">Until 10:00 PM</span>
+</div>
+</div>
+<p class="text-on-surface-variant line-clamp-2">Premium selection of organic herbs, locally sourced poultry, and artisanal sourdough.</p>
+<div class="flex gap-3 pt-2">
+<button class="bg-tertiary-container text-on-tertiary-container px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="directions">directions</span>
+                            นำทาง
+                        </button>
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between space-y-6">
+<div class="space-y-4">
+<div class="w-full aspect-video rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Gourmet food store interior with wood shelving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUn1hjjrCQnu5U3HPlkHUfxewcNhi7ATYNUCkDtobaUUwdpvAXV8ycTMe9cyYhyqeYqVF-COVoZbbVeRRifq1KZOAxuXIi22IA3TYTIRABZ6FVP3JZ3YgcB9ozmQN59vG-GA8LJTrXa9XlsfBQKQ3eZiV4Qh0n1XpSsXRPkkYylugsuhYDnUcHVw1CDmYv6iYvYSi-YknX7mvkQv_k9GPXk3IisKRzmV-8OpEkMhj_gUCLUdSDYweXad1_nDTw1F-IobIcB-aIUFw"/>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Big C Extra</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="near_me">near_me</span> 2.8 km away
+                        </p>
+</div>
+</div>
+<button class="w-full bg-tertiary-container text-on-tertiary-container py-3 rounded-full font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="directions">directions</span>
+                    นำทาง
+                </button>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between space-y-6">
+<div class="space-y-4">
+<div class="w-full aspect-video rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Luxury grocery store fruit display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTpYCjup7m_ShpUDrjCW2We_r1p4ygzCp1UpLW8NxuKkVnRpHC7Spe3qVpg_WjZhxU8KT-B176BXS0Zvvhnija9c6SIEW2JQuHQwzoNiBtanWvqY-4L6lBrngody1jMGo7wk-OeHySZadsinI0a5nxnAGxeqihHMhYpg1ryOC3b240_cv_W02PkieyRxzrl-XB27XsXjwdrqzbESPfdgxq1VQjwobSgjZ5WZEKzk97z-KWS-uW-3AtYJvchhhdNUOnOmB1eZ5krWE"/>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Gourmet Market</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="near_me">near_me</span> 3.5 km away
+                        </p>
+</div>
+</div>
+<button class="w-full bg-tertiary-container text-on-tertiary-container py-3 rounded-full font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="directions">directions</span>
+                    นำทาง
+                </button>
+</div>
+<!-- Card 4 (Asymmetric) -->
+<div class="bg-[#fdd6af]/30 p-8 rounded-xl flex items-center justify-between border border-[#fdd6af]/50">
+<div class="space-y-2">
+<h3 class="text-headline-sm font-bold text-on-secondary-container">Partner Store?</h3>
+<p class="text-on-secondary-container/80 text-sm max-w-xs">Register your artisanal shop to appear on our BuddyPlan network.</p>
+</div>
+<button class="bg-primary text-on-primary h-12 px-6 rounded-full font-bold shadow-lg shadow-primary/20">Apply</button>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between space-y-6">
+<div class="space-y-4">
+<div class="w-full aspect-video rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Clean minimal storefront facade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjDnNlOI-0w0tG1jkoOKtdxX_azsOaatFYlbrEvkJMn_YuNYcsaxx40nxkyvsTb3JCGfU-yMz-V6Z0TNzKVhAfviZ7W280c2rkfhOLEpSrgb7F5ngo_lJx0quU88m6CpbnsK2HjWuhnbNR0-RsY4ZNnbgZS_vZ-VFDeGJvEMGpydgghFXdXYdN1YxvtBBMekzKuM-HYj6YRf6gFhEsj56ZWixsMONqxWNe7W7hOHRIeFoZ8aGS_la4HNfPvXAwtxBA-tBUVYfL7gc"/>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Villa Market</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="near_me">near_me</span> 4.1 km away
+                        </p>
+</div>
+</div>
+<button class="w-full bg-tertiary-container text-on-tertiary-container py-3 rounded-full font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="directions">directions</span>
+                    นำทาง
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-8 pt-4 bg-[#fbf9f5]/90 backdrop-blur-md rounded-t-[3rem] z-50 shadow-[0_-10px_40px_rgba(49,51,47,0.05)]">
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-4 py-2 hover:bg-[#e9e8e3] rounded-full transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home_app_logo">home_app_logo</span>
+<span class="font-label text-[11px] font-semibold tracking-wider uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-4 py-2 hover:bg-[#e9e8e3] rounded-full transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-label text-[11px] font-semibold tracking-wider uppercase">Shopping</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#fdd6af] text-[#765a3b] rounded-full px-6 py-2 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label text-[11px] font-semibold tracking-wider uppercase">Stores</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#5e605b] px-4 py-2 hover:bg-[#e9e8e3] rounded-full transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label text-[11px] font-semibold tracking-wider uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

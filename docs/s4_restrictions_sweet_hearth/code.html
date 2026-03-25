@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#fdd6af",
+              "primary": "#765a3b",
+              "surface-container": "#efeee9",
+              "outline": "#7a7b76",
+              "background": "#fbf9f5",
+              "secondary-fixed-dim": "#efcfb0",
+              "on-surface": "#31332f",
+              "surface-bright": "#fbf9f5",
+              "error-container": "#fd795a",
+              "primary-fixed": "#fdd6af",
+              "on-secondary-fixed": "#503b25",
+              "secondary-container": "#fdddbd",
+              "on-primary-container": "#64492c",
+              "surface-variant": "#e3e3dd",
+              "outline-variant": "#b2b2ad",
+              "on-error": "#fff7f6",
+              "on-secondary": "#fff7f3",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#355037",
+              "on-primary": "#fff7f3",
+              "inverse-surface": "#0e0e0d",
+              "secondary-fixed": "#fdddbd",
+              "on-primary-fixed": "#4f371b",
+              "on-tertiary-fixed-variant": "#516d52",
+              "primary-fixed-dim": "#eec8a2",
+              "surface-dim": "#dadad4",
+              "inverse-primary": "#fdd6af",
+              "surface-tint": "#765a3b",
+              "on-background": "#31332f",
+              "tertiary-fixed-dim": "#ceeecc",
+              "inverse-on-surface": "#9e9d9a",
+              "tertiary": "#4a664b",
+              "surface-container-high": "#e9e8e3",
+              "tertiary-container": "#dcfcd9",
+              "secondary-dim": "#654f37",
+              "on-error-container": "#6e1400",
+              "on-surface-variant": "#5e605b",
+              "primary-dim": "#694e30",
+              "on-tertiary-container": "#476248",
+              "tertiary-dim": "#3e5a40",
+              "surface-container-low": "#f5f4ef",
+              "on-tertiary": "#e9ffe5",
+              "on-secondary-container": "#644e36",
+              "surface-container-highest": "#e3e3dd",
+              "secondary": "#725b42",
+              "on-secondary-fixed-variant": "#6e573f",
+              "surface": "#fbf9f5",
+              "on-primary-fixed-variant": "#6e5334",
+              "tertiary-fixed": "#dcfcd9",
+              "error-dim": "#791903",
+              "error": "#a73b21"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-toggle:checked + .toggle-track {
+        background-color: #dcfcd9; /* tertiary-container */
+      }
+      .custom-toggle:checked + .toggle-track .toggle-thumb {
+        transform: translateX(1.25rem);
+        background-color: #4a664b; /* tertiary */
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background antialiased min-h-screen flex flex-col">
+<!-- Top Navigation (Conditional Suppression for Task Flow) -->
+<!-- Suppressing full TopAppBar for focus on the specific task: Dietary Restrictions -->
+<header class="flex justify-between items-center w-full px-6 py-6 bg-background">
+<button class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div class="flex-1 px-4">
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-3/4"></div>
+</div>
+</div>
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-low">
+<span class="text-label-md font-bold text-primary">4/4</span>
+</div>
+</header>
+<main class="flex-grow px-8 pb-32 max-w-2xl mx-auto w-full">
+<!-- Heading Section -->
+<div class="mt-8 mb-12">
+<h1 class="font-headline text-headline-md font-extrabold tracking-tight text-primary mb-3">Any dietary restrictions?</h1>
+<p class="text-on-surface-variant text-body-lg">We'll tailor your Artisanal Kitchen experience to your unique preferences.</p>
+</div>
+<!-- Restriction List (Asymmetric Editorial Style) -->
+<div class="space-y-4">
+<!-- Row: Vegetarian -->
+<div class="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/15 hover:border-primary/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-2xl">
+                        🥦
+                    </div>
+<div>
+<span class="block font-headline font-bold text-on-surface">Vegetarian</span>
+<span class="text-on-surface-variant text-sm">No meat or poultry</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer custom-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full toggle-track transition-colors peer-focus:outline-none">
+<div class="absolute top-1 left-1 bg-outline-variant w-4 h-4 rounded-full toggle-thumb transition-transform"></div>
+</div>
+</label>
+</div>
+<!-- Row: No Pork -->
+<div class="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/15 hover:border-primary/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center text-2xl">
+                        🚫🐷
+                    </div>
+<div>
+<span class="block font-headline font-bold text-on-surface">No Pork</span>
+<span class="text-on-surface-variant text-sm">Strictly pork-free dishes</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer custom-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full toggle-track transition-colors peer-focus:outline-none">
+<div class="absolute top-1 left-1 bg-outline-variant w-4 h-4 rounded-full toggle-thumb transition-transform"></div>
+</div>
+</label>
+</div>
+<!-- Row: No Beef -->
+<div class="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/15 hover:border-primary/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center text-2xl">
+                        🚫🐄
+                    </div>
+<div>
+<span class="block font-headline font-bold text-on-surface">No Beef</span>
+<span class="text-on-surface-variant text-sm">Recipes without beef</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer custom-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full toggle-track transition-colors peer-focus:outline-none">
+<div class="absolute top-1 left-1 bg-outline-variant w-4 h-4 rounded-full toggle-thumb transition-transform"></div>
+</div>
+</label>
+</div>
+<!-- Row: No Seafood -->
+<div class="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/15 hover:border-primary/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center text-2xl">
+                        🦐
+                    </div>
+<div>
+<span class="block font-headline font-bold text-on-surface">No Seafood</span>
+<span class="text-on-surface-variant text-sm">Shellfish and fish free</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer custom-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full toggle-track transition-colors peer-focus:outline-none">
+<div class="absolute top-1 left-1 bg-outline-variant w-4 h-4 rounded-full toggle-thumb transition-transform"></div>
+</div>
+</label>
+</div>
+<!-- Row: Gluten-Free -->
+<div class="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/15 hover:border-primary/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-2xl">
+                        🌾
+                    </div>
+<div>
+<span class="block font-headline font-bold text-on-surface">Gluten-Free</span>
+<span class="text-on-surface-variant text-sm">Safe for celiac or sensitive</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer custom-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full toggle-track transition-colors peer-focus:outline-none">
+<div class="absolute top-1 left-1 bg-outline-variant w-4 h-4 rounded-full toggle-thumb transition-transform"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Chef's Note Chip (Signature Component) -->
+<div class="mt-12 p-4 bg-tertiary-container rounded-lg flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-0.5">lightbulb</span>
+<p class="text-on-tertiary-container text-sm font-medium">
+                Chef's Note: Choosing restrictions helps our AI curate recipes that are naturally flavorful without needing substitutions.
+            </p>
+</div>
+</main>
+<!-- Fixed Action Bar -->
+<div class="fixed bottom-0 left-0 w-full p-6 bg-background/80 backdrop-blur-xl flex flex-col items-center">
+<button class="w-full max-w-md bg-gradient-to-br from-primary to-primary-dim text-on-primary font-headline font-bold py-5 rounded-full shadow-[0px_20px_40px_rgba(118,90,59,0.2)] active:scale-95 transition-all duration-200 uppercase tracking-widest text-sm">
+            Create Plan
+        </button>
+<p class="mt-4 text-[10px] text-on-surface-variant font-label tracking-widest uppercase">Step 4 of 4: Finishing Touches</p>
+</div>
+<!-- Hidden Bottom Nav (Suppressed per Shell Visibility Rule for Task Flow) -->
+<!-- This ensures user focus is on the "Create Plan" action -->
+</body></html>

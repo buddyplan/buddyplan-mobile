@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Savor - Welcome Back</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#fff7f3",
+              "error": "#a73b21",
+              "secondary-dim": "#654f37",
+              "tertiary-dim": "#3e5a40",
+              "error-dim": "#791903",
+              "on-primary-fixed-variant": "#6e5334",
+              "surface-dim": "#dadad4",
+              "surface-container-high": "#e9e8e3",
+              "on-tertiary-fixed-variant": "#516d52",
+              "secondary-container": "#fdddbd",
+              "primary-fixed-dim": "#eec8a2",
+              "surface-bright": "#fbf9f5",
+              "tertiary-fixed": "#dcfcd9",
+              "secondary-fixed": "#fdddbd",
+              "inverse-on-surface": "#9e9d9a",
+              "on-background": "#31332f",
+              "surface-variant": "#e3e3dd",
+              "on-tertiary-fixed": "#355037",
+              "inverse-primary": "#fdd6af",
+              "on-surface-variant": "#5e605b",
+              "tertiary": "#4a664b",
+              "primary-dim": "#694e30",
+              "background": "#fbf9f5",
+              "on-tertiary": "#e9ffe5",
+              "tertiary-container": "#dcfcd9",
+              "surface-container": "#efeee9",
+              "on-secondary-fixed": "#503b25",
+              "inverse-surface": "#0e0e0d",
+              "error-container": "#fd795a",
+              "on-secondary-container": "#644e36",
+              "on-error-container": "#6e1400",
+              "surface-tint": "#765a3b",
+              "secondary-fixed-dim": "#efcfb0",
+              "on-tertiary-container": "#476248",
+              "on-error": "#fff7f6",
+              "on-secondary-fixed-variant": "#6e573f",
+              "surface": "#fbf9f5",
+              "primary-fixed": "#fdd6af",
+              "surface-container-low": "#f5f4ef",
+              "outline-variant": "#b2b2ad",
+              "outline": "#7a7b76",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e3e3dd",
+              "primary-container": "#fdd6af",
+              "on-surface": "#31332f",
+              "primary": "#765a3b",
+              "on-primary-container": "#64492c",
+              "secondary": "#725b42",
+              "tertiary-fixed-dim": "#ceeecc",
+              "on-primary": "#fff7f3",
+              "on-primary-fixed": "#4f371b"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chef-gradient {
+            background: linear-gradient(135deg, #765a3b 0%, #694e30 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6 sm:p-12">
+<!-- Top Navigation Suppression: Linear Transactional Page -->
+<main class="w-full max-w-md mx-auto flex flex-col items-center space-y-12">
+<!-- Hero Branding Section -->
+<header class="text-center space-y-4">
+<div class="inline-flex items-center justify-center w-20 h-20 rounded-xl bg-primary-container text-primary mb-2">
+<span class="material-symbols-outlined text-4xl" data-icon="restaurant_menu">restaurant_menu</span>
+</div>
+<h1 class="text-display-lg font-extrabold tracking-tight text-on-background text-4xl">
+                Welcome Back
+            </h1>
+<p class="text-on-surface-variant font-medium">
+                Your digital kitchen is waiting for you.
+            </p>
+</header>
+<!-- Login Form -->
+<section class="w-full space-y-6">
+<form action="#" class="space-y-5">
+<!-- Email Input -->
+<div class="space-y-2">
+<label class="block text-label-md font-bold uppercase tracking-widest text-on-surface-variant ml-4" for="email">
+                        Email Address
+                    </label>
+<input class="w-full px-6 py-4 bg-surface-container-low border-none rounded-lg text-on-surface focus:ring-2 focus:ring-primary-container transition-all placeholder:text-outline" id="email" placeholder="chef@buddyplan.com" type="email"/>
+</div>
+<!-- Password Input -->
+<div class="space-y-2">
+<div class="flex justify-between items-center px-4">
+<label class="text-label-md font-bold uppercase tracking-widest text-on-surface-variant" for="password">
+                            Password
+                        </label>
+<a class="text-label-md font-bold text-primary hover:opacity-80 transition-opacity" href="#">
+                            Forgot Password?
+                        </a>
+</div>
+<div class="relative">
+<input class="w-full px-6 py-4 bg-surface-container-low border-none rounded-lg text-on-surface focus:ring-2 focus:ring-primary-container transition-all placeholder:text-outline" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-5 top-1/2 -translate-y-1/2 text-outline" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Main CTA -->
+<button class="w-full chef-gradient text-on-primary font-bold py-5 rounded-full shadow-lg hover:scale-[0.98] transition-transform duration-200 mt-4 flex justify-center items-center gap-2" type="submit">
+                    Sign In
+                    <span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative flex items-center py-4">
+<div class="flex-grow border-t border-surface-container-high"></div>
+<span class="flex-shrink mx-4 text-label-md font-bold text-outline-variant uppercase tracking-widest">or continue with</span>
+<div class="flex-grow border-t border-surface-container-high"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-4 bg-surface-container-lowest border border-surface-container-high rounded-full hover:bg-surface-container-low transition-colors">
+<img alt="Google" class="w-5 h-5" data-alt="Google logo colorful G icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRHvezOTuRa-A1Inp5sT7o_BciIWc8bxeY74lX-1K4vCpX0q6BJ2uyUYns_vdWYIVcfWZoOUuvnUYxEUE38YmNjdz6JkQW7JAU48rcMeR2Co4Kqgu35GLWh4w7j-X9KJebzsZwdQ4e7kjB0Zuc_-kVD1znALOXMUlqFAW2oubcOiDKEDnTTAWbwCe6-lPCkXQMcS9JyfzX-f-R3DofSOHvMIVSQgLIC1iTXQ7jonJOIJSNEAo6yg0LGDwYQyIm1wm26kZhtyfajqU"/>
+<span class="font-bold text-on-surface text-sm">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-4 bg-surface-container-lowest border border-surface-container-high rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-xl text-on-surface" data-icon="apple" style="font-variation-settings: 'FILL' 1;">ios</span>
+<span class="font-bold text-on-surface text-sm">Apple</span>
+</button>
+</div>
+</section>
+<!-- Footer Navigation -->
+<footer class="text-center pb-8">
+<p class="text-on-surface-variant font-medium">
+                New to the kitchen? 
+                <a class="text-primary font-extrabold hover:underline transition-all underline-offset-4 ml-1" href="#">
+                    Sign Up
+                </a>
+</p>
+</footer>
+</main>
+<!-- Asymmetric Decorative Elements (The Editorial Touch) -->
+<div class="fixed top-12 left-12 opacity-10 pointer-events-none hidden lg:block">
+<span class="material-symbols-outlined text-8xl text-primary" data-icon="lunch_dining">lunch_dining</span>
+</div>
+<div class="fixed bottom-12 right-12 opacity-10 pointer-events-none hidden lg:block">
+<span class="material-symbols-outlined text-9xl text-primary" data-icon="cooking">cooking</span>
+</div>
+<!-- Chef's Note Chip (System Contextual Suggestion) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 px-6 py-3 bg-tertiary-container text-tertiary rounded-full shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="text-label-md font-bold uppercase tracking-wider">Try: "chef_assistant" for early access</span>
+</div>
+</body></html>

@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "BuddyPlan",
+    "slug": "buddyplan",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FAFAF9"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.buddyplan.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "BuddyPlan ต้องการเข้าถึงตำแหน่งของคุณเพื่อแสดงร้านค้าใกล้เคียง",
+        "NSLocationAlwaysUsageDescription": "BuddyPlan ต้องการเข้าถึงตำแหน่งของคุณเพื่อแสดงร้านค้าใกล้เคียง"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FAFAF9"
+      },
+      "package": "com.buddyplan.app",
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "jsEngine": "jsc"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-location",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FAFAF9",
+          "resizeMode": "contain"
+        }
+      ],
+      "expo-web-browser"
+    ],
+    "scheme": "buddyplan",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "a179368f-4961-4535-871c-6b4bcef0b815"
+      }
+    },
+    "owner": "benkbom99"
+  }
+}
